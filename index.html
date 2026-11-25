@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Précieux Mak – Portfolio</title>
+<meta name="description" content="Précieux Mak, ingénieure junior en développement informatique et génie logiciel, community manager et marketing digital à Brazzaville, Congo. Sites web, applications, gestion de pages et stratégie digitale.">
+<meta property="og:title" content="Précieux Mak – Ingénieure junior & Community Manager">
+<meta property="og:description" content="Développement web et mobile, community management, création de visuels et stratégie digitale à Brazzaville.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE occasion : site personnel, net et lumineux
+   IDEA son CV en grand : colonne bleu canard, photo ronde, titres en pastilles dégradées cyan → bleu, cercle pêche
+   PICTURE le portrait assis dans un grand cercle sur la colonne bleu canard
+   COLOUR blanc, bleu canard #0097b2, dégradé #5bdde5 → #0755b1, pêche #f8f1ec
+   TYPE Montserrat (titres) + Ubuntu (texte), comme le CV
+   LAYOUT laptop : colonne canard + portrait à gauche, nom et rôles à droite ; téléphone : portrait, nom, boutons */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#061a22);--ink:light-dark(#10232b,#e6f4f7);--soft:light-dark(#4a5d66,#a9c3cb);--card:light-dark(#ffffff,#0b2833);--line:light-dark(#dcebef,#16404d);--teal:#0097b2;--tealk:light-dark(#007a90,#4fd0e2);--c1:#5bdde5;--c2:#0755b1;--peach:light-dark(#f8f1ec,#0d2c37);--grad:linear-gradient(90deg,var(--c1),var(--c2))}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Ubuntu,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Montserrat,system-ui,sans-serif;line-height:1.1;letter-spacing:-.02em;margin:0}
+h2{font-size:clamp(28px,4vw,40px);text-wrap:balance}
+h3{font-size:18px;font-weight:700}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto}
+.band{padding-block:clamp(44px,6vw,88px);padding-inline:max(5vw,16px)}
+.pill{display:inline-block;background:var(--grad);color:#fff;font:700 15px Montserrat,sans-serif;padding:8px 22px;border-radius:999px;margin-bottom:16px}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:10px max(5vw,16px)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+nav b{font:800 17px Montserrat,sans-serif;color:var(--tealk)}
+nav ul{display:flex;gap:2px 18px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{text-decoration:none;font-size:14px;font-weight:500;padding:6px 0;display:inline-block}
+nav a:hover,nav a:focus-visible{color:var(--tealk)}
+.hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);min-height:min(88svh,760px);position:relative;overflow:hidden}
+.side{background:var(--teal);display:grid;place-items:center;padding:clamp(32px,5vw,64px) max(5vw,16px)}
+.circle{width:min(100%,400px);aspect-ratio:1;border-radius:50%;overflow:hidden;border:8px solid #fff;box-shadow:0 18px 40px rgba(0,40,60,.3)}
+.circle img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+.main{position:relative;padding:clamp(32px,5vw,72px) max(5vw,16px);display:flex;flex-direction:column;justify-content:center;z-index:0}
+.main::before{content:"";position:absolute;right:-180px;top:-160px;width:520px;height:520px;border-radius:50%;background:var(--peach);z-index:-1}
+.main::after{content:"";position:absolute;right:-120px;bottom:-200px;width:360px;height:360px;border-radius:50%;background:var(--peach);z-index:-1}
+.hero h1{font-size:clamp(40px,6.4vw,72px);font-weight:800}
+.hero .role{font:600 clamp(18px,2.1vw,22px)/1.35 Montserrat,sans-serif;margin-top:18px}
+.hero .role span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{color:var(--soft);margin-top:12px;font-size:17px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;min-height:46px;padding:0 22px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none}
+.btn.g{background:var(--grad);color:#fff}
+.btn.o{border:2px solid var(--teal);color:var(--tealk)}
+.btn:hover,.btn:focus-visible{filter:brightness(1.07);outline:2px solid var(--c2);outline-offset:2px}
+.about .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,64px);align-items:center}
+.about img{border-radius:24px;width:100%;max-width:420px;aspect-ratio:3/4;object-fit:cover}
+.about p{font-size:17px;margin-top:14px;max-width:62ch}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(10.5em,1fr));gap:12px;margin-top:24px}
+.fact{background:var(--peach);border-radius:14px;padding:14px 16px}
+.fact b{display:block;font:700 15px Montserrat,sans-serif;color:var(--tealk)}
+.fact span{color:var(--soft);font-size:14px}
+.tealband{background:var(--teal);color:#fff}
+.tealband .pill{background:#fff;color:#0755b1}
+.grid{display:grid;gap:16px;margin-top:30px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(16em,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(14em,1fr))}
+.svc{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(28px,5vw,56px);align-items:start}
+.svc>img{border-radius:24px;width:100%;aspect-ratio:3/4;object-fit:cover;position:sticky;top:90px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;color:var(--ink)}
+.card p{color:var(--soft);margin-top:8px;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chips span{background:var(--peach);border-radius:999px;padding:5px 12px;font-size:14px;font-weight:500}
+.ico{width:46px;height:46px;border-radius:50%;background:var(--grad);display:grid;place-items:center;margin-bottom:14px}
+.ico svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.proj{display:grid;grid-template-columns:repeat(auto-fit,minmax(17em,1fr));gap:18px;margin-top:30px}
+.pc{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.pc .vis{aspect-ratio:4/3;background:var(--teal);display:grid;place-items:center;overflow:hidden}
+.pc .vis img{width:100%;height:100%;object-fit:cover}
+.pc .vis.dark{background:#000}
+.pc .vis.dark img{object-fit:contain}
+.pc .vis.code{background:var(--grad);color:#fff;font:800 clamp(26px,4vw,34px) Montserrat,sans-serif;text-align:center;padding:20px}
+.pc .body{padding:20px 22px 24px}
+.badge{display:inline-block;font-size:13px;font-weight:700;color:var(--tealk);background:var(--peach);border-radius:999px;padding:3px 12px;margin-bottom:10px}
+.pc p{color:var(--soft);font-size:15px;margin-top:8px}
+.two{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:clamp(28px,5vw,56px)}
+.time{margin-top:10px;border-left:3px solid var(--teal);padding-left:24px;display:grid;gap:26px}
+.step{position:relative}
+.step::before{content:"";position:absolute;left:-34px;top:4px;width:17px;height:17px;border-radius:50%;background:var(--grad);border:3px solid var(--bg)}
+.yr{font:700 15px Montserrat,sans-serif;color:var(--tealk);white-space:nowrap}
+.step p{color:var(--soft);font-size:15px;margin-top:4px}
+.lang{display:grid;gap:12px;margin-top:10px}
+.lang div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.lang span{color:var(--soft)}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(28px,5vw,56px);align-items:center}
+.contact img{border-radius:50% 50% 24px 24px;width:100%;max-width:340px;aspect-ratio:3/4;object-fit:cover;border:6px solid #fff}
+.clist{display:grid;gap:12px;margin-top:22px}
+.cl{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);border-radius:14px;padding:12px 16px}
+.cl small{display:block;opacity:.85;font-size:13px}
+.cl strong{font-size:16px;overflow-wrap:anywhere}
+.cl a,.copy{background:#fff;color:#0755b1;border:0;border-radius:999px;padding:0 16px;min-height:40px;display:inline-flex;align-items:center;font:700 14px Ubuntu,sans-serif;text-decoration:none;cursor:pointer}
+.socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.socials a{border:1px solid rgba(255,255,255,.6);border-radius:999px;padding:0 16px;min-height:40px;display:inline-flex;align-items:center;text-decoration:none;font-size:14px;color:#fff}
+.socials a:hover,.socials a:focus-visible{background:#fff;color:#0755b1}
+footer{background:#06414d;color:#cfe9ee;text-align:center;padding:20px 16px;font-size:14px}
+@media(max-width:760px){.svc>img{position:static;max-width:280px}.hero,.svc,.about .wrap,.two,.contact .wrap{grid-template-columns:minmax(0,1fr)}.hero{min-height:0}.circle{width:min(72vw,300px)}.about img,.contact img{max-width:280px}.main::before{width:340px;height:340px;right:-160px;top:-140px}}
+@media(prefers-reduced-motion:no-preference){.circle{animation:pop .9s ease-out both}@keyframes pop{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}}
+</style>
+</head>
+<body>
+<nav aria-label="Navigation principale">
+  <div class="wrap">
+    <b>Précieux Mak</b>
+    <ul>
+      <li><a href="#a-propos">À propos</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="side">
+    <div class="circle"><img src="assise.jpg" alt="Portrait de Précieux Mak" width="700" height="1049"></div>
+  </div>
+  <div class="main">
+    <h1>Précieux Mak</h1>
+    <p class="role">Ingénieure junior en <span>développement informatique & génie logiciel</span></p>
+    <p class="role" style="margin-top:6px">Certifiée en <span>marketing digital & community management</span></p>
+    <p class="sub">Entrepreneuriat · Gestion de projets · Commerce et développement d'activités</p>
+    <p class="sub" style="margin-top:6px">Brazzaville, République du Congo</p>
+    <div class="cta">
+      <a class="btn g" href="https://wa.me/242050900759">Écrire sur WhatsApp</a>
+      <a class="btn o" href="#projets">Voir mes projets</a>
+      <a class="btn o" href="https://drive.google.com/file/d/179aAcOWVfUI9Z1vTs3nahQzjuROoukwC/view?usp=sharing">CV Digital</a>
+      <a class="btn o" href="https://drive.google.com/file/d/1g63r3z4S2fj0trFqvjd-23eac5q2PMsG/view?usp=sharing">CV Informatique</a>
+      <a class="btn o" href="https://github.com/PrecieuxMak">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<section id="a-propos" class="band about">
+  <div class="wrap">
+    <img src="apropos.jpg" alt="Précieux Mak, souriante, en blazer" width="640" height="800" loading="lazy">
+    <div>
+      <span class="pill">À propos</span>
+      <h2>J'allie la technique et la communication pour faire grandir les entreprises</h2>
+      <p>Ingénieure junior en développement informatique et génie logiciel, certifiée en marketing digital et en community management, je conçois des sites et des applications, et je donne de la visibilité aux marques sur les réseaux sociaux.</p>
+      <p>Je m'investis aussi dans l'entrepreneuriat, la gestion de projets, le commerce et le développement d'activités. Basée à Brazzaville, je suis ouverte aux collaborations, aux missions et aux opportunités d'emploi. Conquérante en Christ, je travaille avec rigueur, douceur et persévérance.</p>
+      <div class="facts">
+        <div class="fact"><b>Licence 3 · Institut 2i</b><span>Développement Informatique & Génie Logiciel</span></div>
+        <div class="fact"><b>Certifiée en 2026</b><span>FITE Congo & IMINOU</span></div>
+        <div class="fact"><b>3 langues</b><span>Français, lingala, anglais</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="competences" class="band tealband">
+  <div class="wrap">
+    <span class="pill">Compétences</span>
+    <h2>Une double compétence : développement et digital</h2>
+    <div class="grid g3" id="skills"></div>
+  </div>
+</section>
+
+<section id="services" class="band">
+  <div class="wrap svc">
+    <img src="portrait.jpg" alt="Portrait de Précieux Mak" width="600" height="800" loading="lazy">
+    <div>
+      <span class="pill">Services</span>
+      <h2>Ce que je peux faire pour vous</h2>
+      <div class="grid g2" id="services-list"></div>
+    </div>
+  </div>
+</section>
+
+<section id="projets" class="band" style="background:var(--peach)">
+  <div class="wrap">
+    <span class="pill">Projets</span>
+    <h2>Mes projets</h2>
+    <div class="proj">
+      <article class="pc">
+        <div class="vis dark"><img src="jeuneshelp.jpg" alt="Logo Jeune'sHelp" width="600" height="650" loading="lazy" style="object-fit:cover"></div>
+        <div class="body"><span class="badge">Développement</span><h3>Jeune'sHelp</h3><p>Plateforme mobile de mise en relation professionnelle qui facilite l'accès à l'emploi, aux stages, aux formations et aux services de proximité. On y consulte et publie des offres ou des besoins, et les acteurs des secteurs formel et informel peuvent échanger entre eux.</p></div>
+      </article>
+      <article class="pc">
+        <div class="vis"><img src="cibebe.jpg" alt="Visuel de la marque CiBébé_Layette" width="640" height="853" loading="lazy" style="object-position:50% 20%"></div>
+        <div class="body"><span class="badge">Marque & community management</span><h3>CiBébé_Layette</h3><p>Projet de boutique de layette pour bébé, présenté comme projet final de ma formation en community management et marketing digital, qui m'a valu la certification. Site web et pages réseaux sociaux en préparation.</p></div>
+      </article>
+      <article class="pc">
+        <div class="vis dark"><img src="yeoshed.jpg" alt="Logo Yeoshed, luxe à prix doux" width="640" height="404" loading="lazy"></div>
+        <div class="body"><span class="badge">Entrepreneuriat & commerce</span><h3>Yeoshed</h3><p>Boutique de vente de parfums, « luxe à prix doux ».</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="parcours" class="band">
+  <div class="wrap two">
+    <div>
+      <span class="pill">Parcours</span>
+      <h2 style="margin-bottom:24px">Formation, certifications et expérience</h2>
+      <div class="time" id="time"></div>
+    </div>
+    <div>
+      <span class="pill">Langues</span>
+      <h2 style="margin-bottom:18px">Je travaille en</h2>
+      <div class="lang">
+        <div><b>Français</b><span>Courant</span></div>
+        <div><b>Lingala</b><span>Courant</span></div>
+        <div><b>Anglais</b><span>Intermédiaire</span></div>
+      </div>
+      <span class="pill" style="margin-top:32px">Qualités</span>
+      <div class="chips" style="margin-top:4px"><span>Créative</span><span>Organisée</span><span>Sérieuse et ponctuelle</span><span>Esprit d'équipe</span><span>Apprend vite</span><span>Motivée</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="band tealband contact">
+  <div class="wrap">
+    <img src="contact.jpg" alt="Précieux Mak debout sur fond orange" width="640" height="800" loading="lazy" style="object-position:50% 25%">
+    <div>
+      <span class="pill">Contact</span>
+      <h2>Parlons de votre projet</h2>
+      <p style="margin-top:12px;opacity:.9;max-width:48ch">Un site, une application, des pages à animer ou un poste à pourvoir ? Écrivez-moi, je réponds rapidement.</p>
+      <div class="clist">
+        <div class="cl"><div><small>E-mail</small><strong>precieuxmak678@gmail.com</strong></div><button class="copy" data-c="precieuxmak678@gmail.com">Copier</button></div>
+        <div class="cl"><div><small>E-mail (2)</small><strong>precieuxmak678@outlook.com</strong></div><button class="copy" data-c="precieuxmak678@outlook.com">Copier</button></div>
+        <div class="cl"><div><small>WhatsApp / téléphone</small><strong>+242 05 090 07 59</strong></div><a href="https://wa.me/242050900759">WhatsApp</a></div>
+        <div class="cl"><div><small>WhatsApp / téléphone</small><strong>+242 06 863 56 08</strong></div><a href="https://wa.me/242068635608">WhatsApp</a></div>
+      </div>
+      <div class="socials">
+        <a href="https://drive.google.com/file/d/179aAcOWVfUI9Z1vTs3nahQzjuROoukwC/view?usp=sharing">CV Digital (PDF)</a>
+        <a href="https://drive.google.com/file/d/1g63r3z4S2fj0trFqvjd-23eac5q2PMsG/view?usp=sharing">CV Informatique (PDF)</a>
+        <a href="https://github.com/PrecieuxMak">GitHub</a>
+        <a href="https://www.linkedin.com/in/precieuxmak">LinkedIn</a>
+        <a href="https://www.instagram.com/precieuxmak">Instagram</a>
+        <a href="https://www.facebook.com/precieux.mak.7">Facebook</a>
+        <a href="https://x.com/PrecieuxMak2">X</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Précieux Mak · Brazzaville, Congo</footer>
+
+<script>
+{
+const icons={
+code:'<path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13 6l-2 12"/>',
+db:'<ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/>',
+net:'<rect x="9" y="3" width="6" height="5" rx="1"/><rect x="3" y="16" width="6" height="5" rx="1"/><rect x="15" y="16" width="6" height="5" rx="1"/><path d="M12 8v4M6 16v-4h12v4"/>',
+megaphone:'<path d="M3 11v2a1 1 0 001 1h3l6 4V6L7 10H4a1 1 0 00-1 1zM16 8a5 5 0 010 8"/>',
+web:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/>',
+phone:'<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>',
+users:'<circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4a3 3 0 010 6M21 20c0-2.6-1.6-4.8-4-5.6"/>',
+palette:'<path d="M12 3a9 9 0 100 18c1 0 1.5-.8 1.5-1.5 0-1.2-1-1.5-1-2.5s.8-1.5 2-1.5H17a4 4 0 004-4c0-4.7-4-8.5-9-8.5z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/>',
+target:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>'
+};
+const ico=k=>'<div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24">'+icons[k]+'</svg></div>';
+const skills=[
+['code','Développement web & logiciel','Sites, applications et programmes, du front-end au back-end.',['HTML','CSS','JavaScript','Bootstrap','PHP','Laravel','Python','Django','C','C#','C++']],
+['phone','Web & mobile','Interfaces modernes et applications mobiles multiplateformes.',['React','Flutter']],
+['db','Bases de données','Modélisation et gestion de bases relationnelles.',['PostgreSQL','MySQL','SQL','Jointures','Transactions','Procédures stockées','Méthode Merise']],
+['net','Réseaux & systèmes','Configuration réseau, maintenance et administration système.',['Adressage IP','Câblage','DNS','DHCP','Active Directory','Bureau à distance','Cisco','MikroTik','FortiGate','Maintenance logicielle']],
+['megaphone','Marketing digital & CM','Contenus, communautés et visibilité en ligne.',['Création de contenus','Gestion des réseaux sociaux','Calendrier éditorial','Stratégie digitale','SEO','E-mailing','Montage vidéo','IA appliquée au digital']],
+['palette','Outils numériques','Les outils que j\'utilise au quotidien.',['Canva','CapCut','Meta Business Suite','Metricool','Hootsuite','HubSpot','Mailchimp','Trello','Notion','Outils Google','Word','Excel','PowerPoint','Access']],
+['target','Gestion & business','Mener un projet de l\'idée à la vente.',['Gestion de projets','Diagrammes PERT & GANTT','Entrepreneuriat','Commerce','Développement d\'activités']]
+];
+document.getElementById('skills').innerHTML=skills.map(s=>'<div class="card">'+ico(s[0])+'<h3>'+s[1]+'</h3><p>'+s[2]+'</p><div class="chips">'+s[3].map(c=>'<span>'+c+'</span>').join('')+'</div></div>').join('');
+const services=[
+['web','Création de sites web','Sites vitrines et sur mesure, adaptés au mobile, pour présenter votre activité.'],
+['phone','Applications web & mobile','Applications pour digitaliser vos services, avec Laravel, Django, React ou Flutter.'],
+['users','Gestion de pages','Animation de vos réseaux sociaux : publications, réponses aux messages, suivi des résultats.'],
+['palette','Création de visuels','Affiches, publications et bannières à l\'image de votre marque.'],
+['target','Stratégie digitale','Un plan clair pour gagner en visibilité et en clients sur les réseaux.']
+];
+document.getElementById('services-list').innerHTML=services.map(s=>'<div class="card">'+ico(s[0])+'<h3>'+s[1]+'</h3><p>'+s[2]+'</p></div>').join('');
+const time=[
+['2026','Certifications en marketing digital & community management','FITE Congo et IMINOU'],
+['2023 – 2026','Licence 3 · Développement Informatique & Génie Logiciel','Institut International 2i, Pôle Polytechnique, Brazzaville'],
+['Octobre – décembre 2024','Formation en réseau informatique et maintenance','DigiConnect / B-Venture'],
+['16 juillet 2022','Mission freelance : accueil et réception','Banque Congolaise de l\'Habitat (BCH)']
+];
+document.getElementById('time').innerHTML=time.map(t=>'<div class="step"><span class="yr">'+t[0]+'</span><h3 style="margin-top:4px">'+t[1]+'</h3><p>'+t[2]+'</p></div>').join('');
+for(const b of document.querySelectorAll('.copy')){
+  b.addEventListener('click',async()=>{
+    try{await navigator.clipboard.writeText(b.dataset.c);b.textContent='Copié'}catch(e){b.textContent='Sélectionnez le texte'}
+    setTimeout(()=>{b.textContent='Copier'},2000);
+  });
+}
+}
+</script>
+</body>
+</html>
